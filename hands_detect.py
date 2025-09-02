@@ -70,31 +70,31 @@ class HandDetector:
 
         thumb_dot_1 = self._single_dot_coordinate(frame=frame, dot_id=4)
         thumb_dot_2 = self._single_dot_coordinate(frame=frame, dot_id=3)
-        if len(thumb_dot_1) != 0:
+        if len(thumb_dot_1) != 0 and len(thumb_dot_2) != 0:
             if thumb_dot_1[0][1] - thumb_dot_2[0][1] > 0:
                 thumb = 1
 
         index_finger_dot_1 = self._single_dot_coordinate(frame=frame, dot_id=8)
         index_finger_dot_2 = self._single_dot_coordinate(frame=frame, dot_id=6)
-        if len(index_finger_dot_1) != 0:
+        if len(index_finger_dot_1) != 0 and len(index_finger_dot_2) != 0:
             if index_finger_dot_1[0][2] - index_finger_dot_2[0][2] < 0:
                 index_finger = 1
 
         middle_finger_dot_1 = self._single_dot_coordinate(frame=frame, dot_id=12)
         middle_finger_dot_2 = self._single_dot_coordinate(frame=frame, dot_id=10)
-        if len(middle_finger_dot_1) != 0:
+        if len(middle_finger_dot_1) != 0 and len(middle_finger_dot_2) != 0:
             if middle_finger_dot_1[0][2] - middle_finger_dot_2[0][2] < 0:
                 middle_finger = 1
         
         ring_finger_dot_1 = self._single_dot_coordinate(frame=frame, dot_id=16)
         ring_finger_dot_2 = self._single_dot_coordinate(frame=frame, dot_id=14)
-        if len(ring_finger_dot_1) != 0:
+        if len(ring_finger_dot_1) != 0 and len(ring_finger_dot_2) != 0:
             if ring_finger_dot_1[0][2] - ring_finger_dot_2[0][2] < 0:
                 ring_finger = 1
 
         little_finger_dot_1 = self._single_dot_coordinate(frame=frame, dot_id=20)
         little_finger_dot_2 = self._single_dot_coordinate(frame=frame, dot_id=19)
-        if len(little_finger_dot_1) != 0:
+        if len(little_finger_dot_1) != 0 and len(little_finger_dot_2) != 0:
             if little_finger_dot_1[0][2] - little_finger_dot_2[0][2] < 0:
                 little_finger = 1
 
