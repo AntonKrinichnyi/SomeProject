@@ -60,7 +60,7 @@ while True:
         M = cv.getRotationMatrix2D(center_of_glasses, -angle, 1.0) # Повертаємо їх на кут який ми розрахували раніше (кут має бути від'ємним або окуляри будуть повертатись не в ту сторону)
 
         x_offset = nose_bridge[0] - glasses_width // 2 # Центруємо окуляри по горизонталі та на переносиці
-        y_offset = nose_bridge[1] - resized_glasses_rgb.shape[0] // 2 + 5 # Центруємо по вертикалі (+ 5 зміщення вниз, так краще сидять)
+        y_offset = nose_bridge[1] - resized_glasses_rgb.shape[0] // 2 + 3 # Центруємо по вертикалі (+ 3 зміщення вниз, так краще сидять)
 
         """
         Розраховуємо розмір окулярів для обрізки 
@@ -103,7 +103,6 @@ while True:
         alpha_inv = 1.0 - alpha # Перетворюємо альфа-канал в float в діапазоні від 0 до 1
 
 
-        # Наложение: (цвет_фона * (1 - альфа)) + (цвет_переднего_плана * альфа)
         for c in range(0, 3): # Проходимо по кажному каналу (BGR)
             frame_roi[:, :, c] = (frame_roi[:, :, c] * alpha_inv) + \
                                  (glasses_overlay_rgb[:, :, c] * alpha)
